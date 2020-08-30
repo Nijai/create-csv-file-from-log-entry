@@ -94,12 +94,11 @@ def Find_pattern():
 							dict[result3[0][2:-1]].update({str(r): dict.get(str(r),0)+1})   #Existing user with new INFO/ERROR.
 							print("Existing User: ", k1, "with new ",r," No.: ", dict.get(str(r),0)+1)
 							print(" ")
-							break
-	return dict, dict2					
-	#per_user = sorted(dict.items()) #Sort dict alphabetically by Username
-	#error = sorted(dict2.items(), key=lambda x: x[1], reverse=True) #Sorting dict2 in reverse order of count
-	#user_statistics_csv(per_user, fields) 
-	#error_count_csv(error)
+							break					
+	per_user = sorted(dict.items()) #Sort dict alphabetically by Username
+	error = sorted(dict2.items(), key=lambda x: x[1], reverse=True) #Sorting dict2 in reverse order of count
+	user_statistics_csv(per_user, fields) 
+	error_count_csv(error)
 
  
 Find_pattern()
