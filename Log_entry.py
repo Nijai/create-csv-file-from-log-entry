@@ -87,7 +87,7 @@ def Find_pattern():
 					for k2, v2 in v1.items():
 						if str(result3[0][2:-1]).strip() == str(k1).strip() and r == str(k2):
 							dict[result3[0][2:-1]].update({str(r): dict.get(str(r),v2)+1})   #Existing user with incremented INFO/ERROR msg.
-							print("Existing User: ", k1, "with new ",r," No.: ", dict.get(str(r),v2)+1)
+							print("Existing User: ", k1, "with incremented ",r," No.: ", dict.get(str(r),v2)+1)
 							print(" ")
 							break
 						elif str(result3[0][2:-1]).strip() == str(k1).strip() and r not in v1:
@@ -95,11 +95,11 @@ def Find_pattern():
 							print("Existing User: ", k1, "with new ",r," No.: ", dict.get(str(r),0)+1)
 							print(" ")
 							break
-						
-	per_user = sorted(dict.items()) #Sort dict alphabetically by Username
-	error = sorted(dict2.items(), key=lambda x: x[1], reverse=True) #Sorting dict2 in reverse order of count
-	user_statistics_csv(per_user, fields) 
-	error_count_csv(error)
+	return dict, dict2					
+	#per_user = sorted(dict.items()) #Sort dict alphabetically by Username
+	#error = sorted(dict2.items(), key=lambda x: x[1], reverse=True) #Sorting dict2 in reverse order of count
+	#user_statistics_csv(per_user, fields) 
+	#error_count_csv(error)
 
  
 Find_pattern()
