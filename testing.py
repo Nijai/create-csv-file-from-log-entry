@@ -11,8 +11,4 @@ import os
 import subprocess
 import multiprocessing
 
-dict, dict2 = Log_entry.Find_pattern()
-print("Data: ")
-print(dict)
-print(" ")
-print(dict2)
+Log_entry.Find_pattern()
