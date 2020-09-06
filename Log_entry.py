@@ -9,6 +9,8 @@ from multiprocessing import Pool, TimeoutError, Process, freeze_support, Lock
 import os
 import subprocess
 import multiprocessing
+import psutil
+
 
 
 
@@ -129,4 +131,6 @@ if __name__ == '__main__':
 	data = [lines[i:i + n] for i in range(0, len(lines), n)]
 	Find_pattern(data)
 	print("--- %s seconds ---" % (time.time() - start_time))
+	process = psutil.Process(os.getpid())
+	print(process.memory_info().rss)
 	
